@@ -61,6 +61,7 @@ class GameScene: SKScene {
 		self.addChild(gameControls.buttonReplay)
         self.addChild(gameControls.buttonExit)
         self.addChild(gameControls.net)
+		self.addChild(gameControls.message)
 		
 		gameTicTacToe.gameState = 1
 		gameTicTacToe.board = [[0,0,0],[0,0,0],[0,0,0]]
@@ -70,6 +71,8 @@ class GameScene: SKScene {
 			gameTicTacToe.placeholder[i].isHidden = false
             self.addChild(gameTicTacToe.placeholder[i])
         }
+		
+		gameControls.message.text = "X Turn"
 		
 	}
 	

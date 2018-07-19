@@ -6,14 +6,6 @@
 //  Copyright © 2018 Cartwheel Galaxy. All rights reserved.
 //
 
-//
-//  GameControls.swift
-//  Scene-Control
-//
-//  Created by Fernando Vazquez on 7/4/18.
-//  Copyright © 2018 Cartwheel Galaxy. All rights reserved.
-//
-
 import SpriteKit
 
 struct GameTicTacToe {
@@ -90,7 +82,10 @@ struct GameTicTacToe {
 	// 0 = play, 1 = winX, 2 = winO, 3 = tie
 	func checkPlayWinTie() -> Int {
 		// Check for X Win
-		if (board[0][0]==1 && board[0][1]==1 && board[0][2]==1) { return 1 }
+		if (board[0][0]==1 && board[0][1]==1 && board[0][2]==1) {
+			
+			return 1
+		}
 		if (board[1][0]==1 && board[1][1]==1 && board[1][2]==1) { return 1 }
 		if (board[2][0]==1 && board[2][1]==1 && board[2][2]==1) { return 1 }
 		if (board[0][0]==1 && board[1][0]==1 && board[2][0]==1) { return 1 }
@@ -128,29 +123,27 @@ struct GameTicTacToe {
 		let message = gameScene.gameControls.message
 		
 		if (lastState == 1 && checkPlayWinTie() == 0) {
+			message.text = "O Turn"
 			return 2 // Play O
 		}
 		if (lastState == 1 && checkPlayWinTie() == 1) {
 			message.text = "Xs WIN"
-			gameScene.addChild(message)
 			return 3 // Win X
 		}
 		if (lastState == 1 && checkPlayWinTie() == 3) {
 			message.text = "TIE"
-			gameScene.addChild(message)
 			return 5 // Tie
 		}
 		if (lastState == 2 && checkPlayWinTie() == 0) {
+			message.text = "X Turn"
 			return 1 // Play X
 		}
 		if (lastState == 2 && checkPlayWinTie() == 2) {
 			message.text = "Os WIN"
-			gameScene.addChild(message)
 			return 3 // Win O
 		}
 		if (lastState == 2 && checkPlayWinTie() == 3) {
 			message.text = "TIE"
-			gameScene.addChild(message)
 			return 5 // Tie
 		}
 		return	0

@@ -56,7 +56,7 @@ struct GameControls {
 		message.fontColor = .white
 		message.fontSize = 80
 		message.zPosition = 6
-		message.position = CGPoint(x: gameScene.size.width/2, y: (gameScene.size.height/2))
+		message.position = CGPoint(x: gameScene.size.width/2, y: (gameScene.size.height*18/20))
         
         /// Resizing buttons
         let resizeFactorX:CGFloat = gameScene.size.width/407.0
