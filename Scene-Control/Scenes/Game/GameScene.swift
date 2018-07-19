@@ -17,6 +17,9 @@ class GameScene: SKScene {
 	/// Game Controls
 	var gameControls: GameControls!
 	
+	/// Game TicTacToe
+	var gameTicTacToe : GameTicTacToe!
+	
     private var lastUpdateTime : TimeInterval = 0
 
 	/// Custom Initializer
@@ -28,8 +31,9 @@ class GameScene: SKScene {
 		/// Create scene from code
 		super.init(size: sceneSize)
 		
-		/// Game Controls
+		/// Game Controls and TicTacToe
 		gameControls = GameControls.init(inThisScene: self)
+		gameTicTacToe = GameTicTacToe.init(inThisScene: self)
 		
 		/// Load scene
 		if let skView = gameViewController.view as! SKView? {
@@ -51,15 +55,22 @@ class GameScene: SKScene {
 	/// Present Elements to the Scene
 	override func didMove(to view: SKView) {
 		
+		
 		/// Present Label and Button
         self.addChild(gameControls.background)
 		self.addChild(gameControls.buttonReplay)
         self.addChild(gameControls.buttonExit)
         self.addChild(gameControls.net)
-        
+		
+		gameTicTacToe.gameState = 1
+		gameTicTacToe.board = [[0,0,0],[0,0,0],[0,0,0]]
+		
+        /// Add Placeholders
         for i in 0...8 {
-            self.addChild(gameControls.placeholder[i])
+			gameTicTacToe.placeholder[i].isHidden = false
+            self.addChild(gameTicTacToe.placeholder[i])
         }
+		
 	}
 	
 	/// Before another Scence will be presented
@@ -74,30 +85,24 @@ class GameScene: SKScene {
 			let item = atPoint(location)
 			
 			/// Exit and return to GameScene
-            if (item.name == "buttonSprite-Replay") {
-                gameViewController.sceneStateMachine.enter(MenuSceneState.self)
-            }
-			
 			if (item.name == "buttonSprite-Exit") {
 				exit(0)
 			}
-			
-            for i in 0...8 {
-                if gameControls.placeholder[i] == item {
-					if gameControls.inputValue(posX: i % 3, posY: i / 3, value: gameControls.gameState) {
-						
+			else {
+				if (item.name == "buttonSprite-Replay") || (gameTicTacToe.gameState >= 3){
+					gameViewController.sceneStateMachine.enter(MenuSceneState.self)
+				}
+				else {
+					for i in 0...8 {
+						if gameTicTacToe.placeholder[i] == item {
+							if !(gameTicTacToe.inputValue(posX: i % 3, posY: i / 3, value: gameTicTacToe.gameState)) {
+								print("Invalid position, try again")
+							}
+						}
 					}
-                }
-            }
+				}
+			}
 		}
-	}
-	
-	override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-		
-	}
-	
-	override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-		
 	}
 	
 }
