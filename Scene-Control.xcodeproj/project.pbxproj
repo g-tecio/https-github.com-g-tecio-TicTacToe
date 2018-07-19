@@ -13,6 +13,7 @@
 		54528CC720F40F4F00384A4D /* InstructionsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54528CC620F40F4F00384A4D /* InstructionsScene.swift */; };
 		54528CC920F40F6200384A4D /* InstructionsControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54528CC820F40F6200384A4D /* InstructionsControls.swift */; };
 		54528CCB20F4108400384A4D /* InstructionsSceneState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54528CCA20F4108400384A4D /* InstructionsSceneState.swift */; };
+		CBA5D81421002B63001AA9DC /* GameTicTacToe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5D81321002B63001AA9DC /* GameTicTacToe.swift */; };
 		CBEDA31B20ED15B500891164 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEDA31A20ED15B500891164 /* AppDelegate.swift */; };
 		CBEDA32120ED15B500891164 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEDA32020ED15B500891164 /* GameScene.swift */; };
 		CBEDA32320ED15B500891164 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEDA32220ED15B500891164 /* GameViewController.swift */; };
@@ -35,6 +36,7 @@
 		54528CC620F40F4F00384A4D /* InstructionsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsScene.swift; sourceTree = "<group>"; };
 		54528CC820F40F6200384A4D /* InstructionsControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsControls.swift; sourceTree = "<group>"; };
 		54528CCA20F4108400384A4D /* InstructionsSceneState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsSceneState.swift; sourceTree = "<group>"; };
+		CBA5D81321002B63001AA9DC /* GameTicTacToe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTicTacToe.swift; sourceTree = "<group>"; };
 		CBEDA31720ED15B500891164 /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBEDA31A20ED15B500891164 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBEDA32020ED15B500891164 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		CBEDA33F20ED20E700891164 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				CBA5D81321002B63001AA9DC /* GameTicTacToe.swift */,
 				CBEDA34020ED212F00891164 /* GameControls.swift */,
 				CBEDA32020ED15B500891164 /* GameScene.swift */,
 			);
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBA5D81421002B63001AA9DC /* GameTicTacToe.swift in Sources */,
 				CBEDA32120ED15B500891164 /* GameScene.swift in Sources */,
 				CBEDA34320ED377C00891164 /* GameData.swift in Sources */,
 				54528CC020F407C300384A4D /* MenuScene.swift in Sources */,
@@ -385,7 +389,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 36SAKH8RTR;
+				DEVELOPMENT_TEAM = 745E977PLG;
 				INFOPLIST_FILE = "Scene-Control/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -403,7 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 36SAKH8RTR;
+				DEVELOPMENT_TEAM = 745E977PLG;
 				INFOPLIST_FILE = "Scene-Control/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
